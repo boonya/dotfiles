@@ -14,3 +14,9 @@ ln -s $HOME/Documents/dotfiles/git/gitconfig $HOME/.gitconfig
 ln -s $HOME/Documents/dotfiles/git/gitignore $HOME/.gitignore
 ln -s $HOME/Documents/dotfiles/git/local.gitconfig $HOME/.local.gitconfig
 ```
+
+Or
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/boonya/dotfiles/main/setup.sh)"
+```
