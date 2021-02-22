@@ -1,0 +1,58 @@
+[alias]
+	s         = status -s
+
+	d         = diff
+	dc        = diff --cached
+	df        = diff --color --color-words --abbrev
+
+	l         = log
+	lg        = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+	b         = branch
+	ba        = branch -a
+	bv        = branch -vv
+	br        = branch -r
+
+	hide      = stash
+	save      = stash save
+	hidden    = stash list
+	hidden-show   = stash show
+	hidden-pop    = stash pop
+	hidden-apply  = stash apply
+
+	bd2        = "!f() { git branch -D $1 && git push sb :$1; }; f"
+	bd3        = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1; }; f"
+
+	c         = checkout
+	cb        = checkout -b
+
+	po        = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+	pr        = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean  = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	cr-clean  = "!git for-each-ref refs/heads/cr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+	cr        = "!f() { git fetch origin $(git bs $1):cr/$1; git checkout cr/$1; }; f"
+	bs        = "!f() { git remote show origin | grep $1 | head -1 | awk '{print $1}'; }; f"
+[rerere]
+	enabled = true
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	autocrlf = input
+	eol = lf
+[merge]
+	log = true
+[help]
+	autocorrect = 1
+[push]
+	default = current
+[include]
+	path = ~/.local.gitconfig
+[advice]
+	detachedHead = false
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
