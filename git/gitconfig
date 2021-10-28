@@ -13,8 +13,8 @@
 	bv        = branch -vv
 	br        = branch -r
 
-	hide      = stash
-	save      = stash save
+	hide      = stash --include-untracked
+	save      = stash save --include-untracked
 	hidden    = stash list
 	hidden-show   = stash show
 	hidden-pop    = stash pop
@@ -56,3 +56,6 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[user]
+	name = Serhii [boonya] Buinytskyi
+	email = 779184+boonya@users.noreply.github.com
