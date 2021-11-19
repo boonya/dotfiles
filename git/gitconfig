@@ -56,6 +56,3 @@
 	rebase = false
 [init]
 	defaultBranch = main
-[user]
-	name = Serhii [boonya] Buinytskyi
-	email = 779184+boonya@users.noreply.github.com

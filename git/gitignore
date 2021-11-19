@@ -1,5 +1,8 @@
 nbproject
 .idea
 .vscode
+*.log
+*.code-workspace
 .DS_Store
 *.iml
+.local.gitignore
